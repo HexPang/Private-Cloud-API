@@ -1,11 +1,11 @@
 <?php
 
 use Jenssegers\Mongodb\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
 class CreateCloudAppsTable extends Migration
 {
+    protected $connection = 'mongodb';
     /**
      * Run the migrations.
      *
@@ -13,10 +13,12 @@ class CreateCloudAppsTable extends Migration
      */
     public function up()
     {
-        Schema::create('apps',function(Blueprint $table){
-            $table->string('user_id');
-            $table->string('app_name',64);
-        });
+        Schema::connection($this->connection)
+            ->table('users', function (Blueprint $table)
+            {
+                $table->index('user_id');
+                $table->string('app_name',64);
+            });
     }
 
     /**
@@ -26,6 +28,10 @@ class CreateCloudAppsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('apps');
+        Schema::connection($this->connection)
+            ->table('apps', function (Blueprint $collection)
+            {
+                $collection->drop();
+            });
     }
 }
