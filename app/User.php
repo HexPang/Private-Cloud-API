@@ -2,9 +2,10 @@
 
 namespace App;
 
-use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
 
-class User extends Eloquent
+use Illuminate\Database\Eloquent\Model;
+
+class User extends Model
 {
 //    use Notifiable;
 

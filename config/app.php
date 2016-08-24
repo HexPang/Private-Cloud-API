@@ -179,11 +179,6 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         /*
-         * MongoDB Service Provider
-         */
-        Jenssegers\Mongodb\MongodbServiceProvider::class,
-
-        /*
          * Custom Service Providers...
          */
 //        App\Services\ResponseService::class,

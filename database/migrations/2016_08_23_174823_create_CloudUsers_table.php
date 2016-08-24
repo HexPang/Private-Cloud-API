@@ -1,11 +1,10 @@
 <?php
 
-use Jenssegers\Mongodb\Schema;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Migrations\Migration;
 
 class CreateCloudUsersTable extends Migration
 {
-    protected $connection = 'mongodb';
     /**
      * Run the migrations.
      *
@@ -13,13 +12,12 @@ class CreateCloudUsersTable extends Migration
      */
     public function up()
     {
-        Schema::connection($this->connection)
-            ->table('users', function (Blueprint $table)
-            {
-                $table->index('name');
-                $table->string('password',64);
-                $table->unique('email');
-            });
+        Schema::create('users',function(\Illuminate\Database\Schema\Blueprint $table){
+            $table->string('name',64);
+            $table->string('password',64);
+            $table->string('email',128);
+            $table->primary('email');
+        });
     }
 
     /**
@@ -29,10 +27,6 @@ class CreateCloudUsersTable extends Migration
      */
     public function down()
     {
-        Schema::connection($this->connection)
-            ->table('users', function (Blueprint $collection)
-            {
-                $collection->drop();
-            });
+        Schema::drop('users');
     }
 }
