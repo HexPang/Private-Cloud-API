@@ -1,6 +1,7 @@
 @extends('template')
 @section('content')
-    <form action="/dashboard/login" method="post">
+    <form action="/login" method="post">
+       {{ csrf_field() }}
         <div class="ali center w-300">
             <div class="by">
                 <h4 class="ty">

@@ -13,21 +13,10 @@
             </div>
 
             <div class="collapse and" id="nav-toggleable-sm">
-
                 <ul class="nav of nav-stacked">
                     <li class="tq">Dashboards</li>
                     <li class="active">
                         <a href="/dashboard/">{{ app('translator')->trans('language.text.dashboard') }}</a>
-                    </li>
-                    {{--<li>--}}
-                        {{--<a href="/dashboard/group/">分组管理</a>--}}
-                    {{--</li>--}}
-                    {{--<li>--}}
-                        {{--<a href="/dashboard/channel/">我的频道</a>--}}
-                    {{--</li>--}}
-                    <li>
-                        {{--/dashboard/my_follow/--}}
-                        <a href="javascript:alert('Comming Soon..');">{{ app('translator')->trans('language.text.my_subscribe') }}</a>
                     </li>
                 </ul>
                 <hr class="rw aky">

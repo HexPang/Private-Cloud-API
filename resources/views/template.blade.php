@@ -57,18 +57,20 @@
         .bottom-link a {
             color:#434857;
         }
+        .height-100p {
+          height: 100%;
+        }
     </style>
     @yield('header')
 </head>
 
 
 <body>
-<div class="bw">
+<div class="bw height-100p">
     <div class="fu">
         @yield('content')
     </div>
 </div>
-
 
 <script src="/js/jquery.min.js"></script>
 <script src="/js/angular.min.js"></script>

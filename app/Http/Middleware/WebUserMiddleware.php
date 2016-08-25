@@ -15,6 +15,11 @@ class WebUserMiddleware
      */
     public function handle($request, Closure $next)
     {
+        if(!$request->session()->get('user')){
+          if($request->view != 'login' && $request->view != 'register'){
+            return redirect('/login');
+          }
+        }
         return $next($request);
     }
 }

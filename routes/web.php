@@ -10,12 +10,6 @@
 | to using a Closure or controller method. Build something great!
 |
 */
-Route::get('/',function(){
-  return view('index',['user'=>null]);
-});
-Route::get('/login',function(){
-  return view('login');
-});
-Route::get('/register',function(){
-  return view('register',['user'=>null]);
-});
+Route::get('/','ViewController@ShowView');
+Route::get('/{view}','ViewController@ShowView');
+Route::post('/{view}','ViewController@PostRequest');

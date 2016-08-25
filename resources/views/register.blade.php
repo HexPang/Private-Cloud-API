@@ -1,15 +1,16 @@
 @extends('template')
 @section('content')
     <form action="/register" method="post">
+      {{ csrf_field() }}
         <div class="ali center w-300">
             <div class="by">
                 <h4 class="ty">
                     {{ app('translator')->trans('language.text.register') }}
-                    @if(isset($msg) && !$user)
+                    @if(isset($msg) && !@$user)
                         <label class="alert-info">{{ $msg }}</label>
                     @endif
                 </h4>
-                @if($user)
+                @if(@$user)
                     <div class="ph">
                         <label class="alert-info">{{ $msg }}</label>
                     </div>
@@ -25,7 +26,7 @@
                     </div>
                 @endif
             </div>
-            @if(!$user)
+            @if(!@$user)
                 <button type="submit" class="ce apn ame fr f14">{{ app('translator')->trans('language.text.register') }}</button>
                 <button type="button" class="ce apn ame fr f14" style="margin-right:5px;" onclick="location.href='/login';">{{ app('translator')->trans('language.text.login') }}</button>
             @else

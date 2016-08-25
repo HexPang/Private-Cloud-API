@@ -24,11 +24,9 @@ class ViewController extends Controller
         $msg = "信息不完整.";
       }else{
         $user = CloudUser::where('email',$request->email)->first();
-        if($user && Hash::check($request->password,$user->password)){
-          // return redirect('/',302,[
-          //     'Set-Cookie' => 'token=' . $user->token
-          // ]);
-          dd('wtf');
+        if($user && \Hash::check($request->password,$user->password)){
+          $request->session()->put('user',$user);
+          return redirect('/index');
         }
       }
     }else if($view == 'register'){
