@@ -5,17 +5,20 @@
     <div class="width-100p ali">
         <div class="by">
             <h4 class="ty">
-                My Applications
+                Application
             </h4>
-            @foreach($apps as $app)
-            <div class="ph" href="#">
-                <a href="id-{{ $app->app_id }}"><label class="l-label">{{ $app->app_name }}</label></a>
-                <label class="fr l-label">{{ $app->app_id }}</label>
-            </div>
-            @endforeach
-            <div class="ph width-100p">
-                <a href="create" class="ce apn ame width-100p">Create Application</a>
-            </div>
+            @if(count($items) > 0)
+              @foreach($items as $item)
+                <div class="ph" href="#">
+                    <label class="fr l-label">{{ $item->key }}</label>
+                </div>
+              @endforeach
+            @else
+              <div class="ph" href="#">
+                  <label class="fr l-label">No data has been upload.</label>
+              </div>
+            @endif
+
         </div>
     </div>
 </div>

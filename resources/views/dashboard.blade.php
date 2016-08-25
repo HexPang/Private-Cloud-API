@@ -28,11 +28,10 @@
         <div class="apa">
             <div class="apb">
                 <h6 class="apd">Dashboards</h6>
-                <h2 class="apc">{{ app('translator')->trans('language.text.dashboard') }} - {{ $user->name }}</h2>
+                <h2 class="apc">Applications</h2>
             </div>
         </div>
         <hr class="aky">
-
         @yield('body')
     </div>
 
