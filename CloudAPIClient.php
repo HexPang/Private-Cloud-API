@@ -8,8 +8,8 @@ class CloudAPIClient{
         $this->app_id = $app_id;
     }
 
-    public function Request($method,$data){
-        $url = API_URL . "api/{$this->app_id}/{$method}";
+    public function Request($key,$data){
+        $url = API_URL . "api/{$this->app_id}/{$key}/";
         $data = json_encode($data);
         $data = urlencode($data);
         $sign = md5($this->app_id . $data);

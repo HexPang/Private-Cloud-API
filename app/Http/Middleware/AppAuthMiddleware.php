@@ -21,9 +21,9 @@ class AppAuthMiddleware
         if(!$request->app_id){
             return Response::Json(-1);
         }
-        if(!$request->action){
-            return Response::Json(-2);
-        }
+//        if(!$request->action){
+//            return Response::Json(-2);
+//        }
         if(!$request->has('data')){
             return Response::Json(-3);
         }

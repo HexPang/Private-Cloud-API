@@ -13,4 +13,4 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::match(['get','post'],'/{app_id}/{action}/',['uses' => 'APIController@Process']);
+Route::match(['get','post'],'/{app_id}/{key}/',['uses' => 'APIController@Process']);
