@@ -25,6 +25,8 @@ class UpdateCloudUsersTable extends Migration
      */
     public function down()
     {
+      Schema::table('users',function(Blueprint $table){
         $table->dropColumn(['created_at', 'updated_at']);
+      });
     }
 }
