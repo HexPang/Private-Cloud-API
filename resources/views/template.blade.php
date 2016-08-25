@@ -75,7 +75,6 @@
     @yield('header')
 </head>
 
-
 <body>
 <div class="bw height-100p">
     <div class="fu">
