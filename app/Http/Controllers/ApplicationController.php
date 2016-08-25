@@ -14,8 +14,8 @@ class ApplicationController extends Controller
       if(substr($view,0,3) == "id-"){
         $application_id = substr($view,3);
         $view = 'view';
-        $data = CloudData::where('app_id',$application_id)->get();
-        $data['items'] = $data;
+        $items = CloudData::where('app_id',$application_id)->get();
+        $data['items'] = $items;
       }
       if($view == 'list'){
         $apps = CloudApp::where('user_id',$request->user()->id)->get();
