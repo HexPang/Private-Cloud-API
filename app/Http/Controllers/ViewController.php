@@ -70,6 +70,6 @@ class ViewController extends Controller
           }
       }
     }
-    return $this->ShowView($view,['msg'=>$msg]);
+    return $this->ShowView($request,$view,['msg'=>$msg]);
   }
 }
