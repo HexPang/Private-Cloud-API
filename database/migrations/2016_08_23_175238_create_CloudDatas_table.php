@@ -13,6 +13,7 @@ class CreateCloudDatasTable extends Migration
     public function up()
     {
         Schema::create('data',function(\Illuminate\Database\Schema\Blueprint $table){
+          $table->increments('id');
             $table->string('app_id');
             $table->string('key');
             $table->longText('data');
