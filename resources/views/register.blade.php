@@ -1,6 +1,6 @@
-@extends('dashboard.template')
+@extends('template')
 @section('content')
-    <form action="/signup" method="post">
+    <form action="/register" method="post">
         <div class="ali center w-300">
             <div class="by">
                 <h4 class="ty">

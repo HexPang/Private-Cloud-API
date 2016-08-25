@@ -1,4 +1,4 @@
-@extends('dashboard.template')
+@extends('template')
 @section('content')
     <form action="/dashboard/login" method="post">
         <div class="ali center w-300">
@@ -17,7 +17,7 @@
                 </div>
             </div>
             <button type="submit" class="ce apn ame fr f14">{{ app('translator')->trans('language.text.login') }}</button>
-            <button type="button" class="ce apn ame fr f14" style="margin-right:5px;" onclick="location.href='/signup';">{{ app('translator')->trans('language.text.register') }}</button>
+            <button type="button" class="ce apn ame fr f14" style="margin-right:5px;" onclick="location.href='/register';">{{ app('translator')->trans('language.text.register') }}</button>
         </div>
     </form>
 @endsection

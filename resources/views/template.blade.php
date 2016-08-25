@@ -78,7 +78,7 @@
 </body>
 <div class="bottom">
     <div class="bottom-link">
-        Source Code <a href="http://github.com/HexPang/IPTV-Source" target="_blank">http://github.com/HexPang/IPTV-Source</a>
+        Source Code <a href="http://github.com/HexPang/Private-Cloud-API" target="_blank">http://github.com/HexPang/Private-Cloud-API</a>
     </div>
 </div>
 </html>
