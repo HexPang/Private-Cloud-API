@@ -6,10 +6,15 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Requests;
 use App\CloudUser;
+use App\CloudApp;
 
 class ViewController extends Controller
 {
-  public function ShowView($view = 'index',$data = null){
+  public function ShowView(Request $request, $view = 'index',$data = null){
+    if($view == 'index'){
+      $apps = CloudApp::where('user_id',$request->user()->id)->get();
+      $data = ['user'=>$request->user(),'apps'=>$apps];
+    }
     if(!$data){
       return view($view);
     }

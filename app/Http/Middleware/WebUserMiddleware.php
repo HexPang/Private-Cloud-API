@@ -20,6 +20,9 @@ class WebUserMiddleware
             return redirect('/login');
           }
         }
+        $request->setUserResolver(function() use ($request) {
+            return $request->session()->get('user');
+        });
         return $next($request);
     }
 }

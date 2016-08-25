@@ -45,6 +45,11 @@
             font-size: 13px;
             color: rgb(190, 58, 49);
         }
+        .b-action {
+            float:right;
+            padding:0;!important;
+            width:80px;
+        }
         .bottom {
             margin: auto;
             /*position: absolute;*/
@@ -62,6 +67,9 @@
         }
         .width-100p {
           width: 100%;
+        }
+        .l-label {
+          margin-bottom:0;
         }
     </style>
     @yield('header')

@@ -9,7 +9,7 @@
             </h4>
             @foreach($apps as $app)
             <div class="ph" href="#">
-                <a href="/application/id-{{ $app->app_id }}"><label class="l-label">{{ $app->app_name }}</label></a>
+                <a href="id-{{ $app->app_id }}"><label class="l-label">{{ $app->app_name }}</label></a>
                 <label class="fr l-label">{{ $app->app_id }}</label>
             </div>
             @endforeach
