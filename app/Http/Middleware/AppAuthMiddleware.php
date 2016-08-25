@@ -17,29 +17,33 @@ class AppAuthMiddleware
      */
     public function handle($request, Closure $next)
     {
-//        return Response::json(1,);
         if(!$request->app_id){
             return Response::Json(-1);
         }
-//        if(!$request->action){
-//            return Response::Json(-2);
-//        }
-        if(!$request->has('data')){
-            return Response::Json(-3);
-        }
-        if(!$request->has('sign')){
-            return Response::Json(-4);
-        }
         $app_id = $request->app_id;
-        $sign = $request->get('sign');
-        $data = $request->get('data');
+        if($request->method == 'POST'){
+          if(!$request->has('data')){
+              return Response::Json(-3);
+          }
+          if(!$request->has('sign')){
+              return Response::Json(-4);
+          }
+          $sign = $request->get('sign');
+          $data = $request->get('data');
 
-        $hash = md5($app_id.$data);
-        if($sign != $hash){
-            return Response::Json(-10);
+          $hash = md5($app_id.$data);
+          if($sign != $hash){
+              return Response::Json(-10,[$sign,$hash]);
+          }
+          $request->data = json_decode(urldecode($data),true);
         }
-        $application = CloudApp::where('id','=',$app_id)->first();
-        $request->data = json_decode(urldecode($data),true);
+
+        $application = CloudApp::where('app_id','=',$app_id)->first();
+        if($application == null){
+          return Response::json(-11);
+        }
+
+
         return $next($request);
     }
 }
