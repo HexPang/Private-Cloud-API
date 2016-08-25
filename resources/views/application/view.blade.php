@@ -1,25 +1,32 @@
 @extends('dashboard')
 
 @section('body')
-<div class="fu">
-    <div class="width-100p ali">
-        <div class="by">
-            <h4 class="ty">
-                Application
-            </h4>
-            @if(count($items) > 0)
-              @foreach($items as $item)
-                <div class="ph">
-                    <label class="fr l-label">{{ $item->key }}</label>
-                </div>
-              @endforeach
-            @else
-              <div class="ph">
-                  <label class="l-label">No data has been upload.</label>
-              </div>
-            @endif
-
-        </div>
-    </div>
+<div class="ud">
+  <div class="eg">
+    @if(count($items) > 0)
+      <table class="cl" data-sort="table">
+        <thead>
+          <tr>
+            <th class="header headerSortDown">Key</th>
+            <th class="header">Data</th>
+            <th class="header">Updated At</th>
+          </tr>
+        </thead>
+        <tbody>
+          @foreach($items as $item)
+            <tr>
+              <td>{{ $item->key }}</td>
+              <td>{{ $item->data }}</td>
+              <td>{{ $item->updated_at }}</td>
+          </tr>
+          @endforeach
+      </tbody>
+      </table>
+    @else
+      <div class="ph">
+          <label class="l-label">No data has been upload.</label>
+      </div>
+    @endif
+  </div>
 </div>
 @endsection
