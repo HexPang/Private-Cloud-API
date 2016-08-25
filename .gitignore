@@ -6,3 +6,4 @@ Homestead.json
 Homestead.yaml
 .env
 bootstrap/cache/
+.DS_Store
