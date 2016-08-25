@@ -9,13 +9,13 @@
             </h4>
             @if(count($items) > 0)
               @foreach($items as $item)
-                <div class="ph" href="#">
+                <div class="ph">
                     <label class="fr l-label">{{ $item->key }}</label>
                 </div>
               @endforeach
             @else
-              <div class="ph" href="#">
-                  <label class="fr l-label">No data has been upload.</label>
+              <div class="ph">
+                  <label class="l-label">No data has been upload.</label>
               </div>
             @endif
 

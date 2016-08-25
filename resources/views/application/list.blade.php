@@ -14,7 +14,7 @@
             </div>
             @endforeach
             <div class="ph width-100p">
-                <a href="create" class="ce apn ame width-100p">Create Application</a>
+                <a href="/application/create" class="ce apn ame width-100p">Create Application</a>
             </div>
         </div>
     </div>
