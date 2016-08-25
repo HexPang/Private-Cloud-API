@@ -15,7 +15,7 @@ class CreateCloudDatasTable extends Migration
         Schema::create('data',function(\Illuminate\Database\Schema\Blueprint $table){
             $table->string('app_id');
             $table->string('key');
-            $table->string('value');
+            $table->longText('data');
         });
     }
 

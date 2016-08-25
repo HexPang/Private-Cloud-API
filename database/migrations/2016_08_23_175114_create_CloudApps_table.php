@@ -13,9 +13,10 @@ class CreateCloudAppsTable extends Migration
     public function up()
     {
         Schema::create('apps',function(\Illuminate\Database\Schema\Blueprint $table){
-            $table->string('app_id');
-            $table->string('user_id');
-            $table->string('app_name',64);
+          $table->increments('id');
+          $table->string('app_id')->unique();
+          $table->string('user_id');
+          $table->string('app_name',64);
         });
     }
 
