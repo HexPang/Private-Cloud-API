@@ -15,7 +15,7 @@ class ApplicationController extends Controller
         $application_id = substr($view,3);
         $view = 'view';
         $data = CloudData::where('app_id',$application_id)->get();
-        $data['data'] = $data;
+        $data['items'] = $data;
       }
       if($view == 'list'){
         $apps = CloudApp::where('user_id',$request->user()->id)->get();
