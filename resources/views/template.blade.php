@@ -60,6 +60,9 @@
         .height-100p {
           height: 100%;
         }
+        .width-100p {
+          width: 100%;
+        }
     </style>
     @yield('header')
 </head>
